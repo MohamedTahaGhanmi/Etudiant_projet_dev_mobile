@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CIN: "
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nom: "
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvPrenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prénom: "
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvSexe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sexe: "
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvClasse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Classe: "
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvMoyenne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Moyenne: "
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/boutonRetour"
+            android:text="Retour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>
