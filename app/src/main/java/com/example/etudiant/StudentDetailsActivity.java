@@ -14,7 +14,6 @@ public class StudentDetailsActivity extends AppCompatActivity {
 
     // Déclaration des TextViews qui afficheront les infos de l'élève
     private TextView tvCin, tvNom, tvPrenom, tvSexe, tvClasse, tvMoyenne;
-    private BaseDeDonnees db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,14 +69,14 @@ public class StudentDetailsActivity extends AppCompatActivity {
 
 
         Button btnSupprimer = findViewById(R.id.boutonSupprimer);
-        BaseDeDonnees baseDeDonnees = new BaseDeDonnees(this);
+        BaseDeDonnees db = new BaseDeDonnees(this);
 
         btnSupprimer.setOnClickListener(v -> {
 
             if (extras != null) {
 
                 String cin = extras.getString("cin");
-                boolean supprime = baseDeDonnees.supprimerEleve(cin);
+                boolean supprime = db.supprimerEleve(cin);
 
                 if (supprime) {
                     Toast.makeText(this, "Étudiant supprimé", Toast.LENGTH_SHORT).show();
