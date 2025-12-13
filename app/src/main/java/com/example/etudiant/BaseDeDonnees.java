@@ -116,5 +116,19 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
         return resultat !=-1;
     }
 
+    public boolean supprimerEleve(String cin) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        int resultat = db.delete(
+                TABLE_ELEVES,
+                "cin = ?",
+                new String[]{cin}
+        );
+
+        // retourne true si au moins une ligne a été supprimée
+        return resultat != -1;
+    }
+
 
 }

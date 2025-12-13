@@ -59,7 +59,13 @@
 
         <Button
             android:id="@+id/boutonModifier"
-            android:text="Modifier"
+            android:text="Modifier vos informations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/boutonSupprimer"
+            android:text="Supprimer vos informations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
