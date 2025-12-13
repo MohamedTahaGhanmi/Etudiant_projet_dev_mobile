@@ -14,7 +14,7 @@
 
     <Button
         android:id="@+id/boutonRecherche"
-        android:text="Recherche"
+        android:text="Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
