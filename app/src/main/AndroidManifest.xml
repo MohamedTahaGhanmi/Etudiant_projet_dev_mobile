@@ -37,6 +37,12 @@
             android:name=".StudentDetailsActivity"
             android:exported="false" />
 
+        <!-- Modify Student activity -->
+        <activity
+            android:name=".ModifierEleveActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>

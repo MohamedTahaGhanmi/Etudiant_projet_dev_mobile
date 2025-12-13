@@ -60,7 +60,7 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
         cv.put("moyenne", e.getMoyenne());
 
         // Insère l'élève dans la table, retourne -1 si échec (ex: CIN déjà existant)
-        long resultat = db.insert(TABLE_ELEVES, null, cv);
+        Long resultat = db.insert(TABLE_ELEVES, null, cv);
         return resultat != -1;
     }
 
@@ -90,5 +90,31 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
             return null;
         }
     }
+
+    // Méthode pour modifier un élève existant (par CIN)
+    public boolean modifierEleve(Eleve e) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        // Nouvelles valeurs
+        cv.put("nom", e.getNom());
+        cv.put("prenom", e.getPrenom());
+        cv.put("sexe", e.getSexe());
+        cv.put("classe", e.getClasse());
+        cv.put("moyenne", e.getMoyenne());
+
+        // Mise à jour de l'élève dont le CIN correspond
+        int resultat = db.update(
+                TABLE_ELEVES,
+                cv,
+                "cin = ?",
+                new String[]{ e.getCin() }
+        );
+
+        // retourne true si au moins une ligne a été modifiée
+        return resultat !=-1;
+    }
+
 
 }
