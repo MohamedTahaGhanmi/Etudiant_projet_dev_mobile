@@ -75,7 +75,8 @@ public class ModifierEleveActivity extends AppCompatActivity {
 
             if (db.modifierEleve(e)) {
                 Toast.makeText(this, "Élève modifié avec succès", Toast.LENGTH_SHORT).show();
-                finish();
+                Intent intent = new Intent(ModifierEleveActivity.this, MainActivity.class);
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Erreur de modification", Toast.LENGTH_SHORT).show();
             }
