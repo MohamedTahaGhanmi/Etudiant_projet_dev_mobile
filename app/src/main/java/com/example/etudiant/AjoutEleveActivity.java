@@ -95,6 +95,25 @@ public class AjoutEleveActivity extends AppCompatActivity {
             return;
         }
 
+        // **Vérification que le CIN contient exactement 8 chiffres**
+        if (cin.length() != 8 || !cin.matches("\\d{8}")) {
+            Toast.makeText(this, "Le CIN doit contenir exactement 8 chiffres", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Vérification que le nom commence par une lettre et contient uniquement des lettres et espaces
+        if (!nom.matches("[a-zA-Z][a-zA-Z ]*")) {
+            Toast.makeText(this, "Le nom doit commencer par une lettre et ne contenir que des lettres et espaces", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Vérification que le prénom commence par une lettre et contient uniquement des lettres et espaces
+        if (!prenom.matches("[a-zA-Z][a-zA-Z ]*")) {
+            Toast.makeText(this, "Le prénom doit commencer par une lettre et ne contenir que des lettres et espaces", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
         // Création de l'objet Eleve avec les valeurs saisies
         Eleve e = new Eleve(cin, nom, prenom, sexe, classe, moyenne);
 
