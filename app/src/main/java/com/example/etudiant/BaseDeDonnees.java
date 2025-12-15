@@ -135,8 +135,8 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
 
     public List<Eleve> getAllStudents() {
         List<Eleve> students = new ArrayList<>();
-        SQLiteDatabase dbRead = this.getReadableDatabase();
-        Cursor c = dbRead.rawQuery("SELECT * FROM " + TABLE_ELEVES, null);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + TABLE_ELEVES, null);
 
         if (c.moveToFirst()) {
             do {
