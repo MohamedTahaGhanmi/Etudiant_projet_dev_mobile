@@ -116,7 +116,7 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
         );
 
         // retourne true si au moins une ligne a été modifiée
-        return resultat !=-1;
+        return resultat >0;
     }
 
     public boolean supprimerEleve(String cin) {
