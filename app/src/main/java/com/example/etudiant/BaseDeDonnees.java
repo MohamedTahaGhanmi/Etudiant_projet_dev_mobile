@@ -130,7 +130,7 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
         );
 
         // retourne true si au moins une ligne a été supprimée
-        return resultat != -1;
+        return resultat >0;
     }
 
     public List<Eleve> getAllStudents() {
