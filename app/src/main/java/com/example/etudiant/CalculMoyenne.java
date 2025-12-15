@@ -48,10 +48,34 @@ public class CalculMoyenne extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // Check empty fields
+                if (tp.getText().toString().isEmpty() ||
+                        ds.getText().toString().isEmpty() ||
+                        exam.getText().toString().isEmpty() ||
+                        coef.getText().toString().isEmpty()) {
+
+                    Toast.makeText(CalculMoyenne.this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 double tpVal = Double.parseDouble(tp.getText().toString());
                 double dsVal = Double.parseDouble(ds.getText().toString());
                 double examVal = Double.parseDouble(exam.getText().toString());
                 double coefVal = Double.parseDouble(coef.getText().toString());
+
+                if (coefVal < 1 || coefVal > 2) {
+                    Toast.makeText(CalculMoyenne.this, "Le coefficient doit être entre 1 et 2", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (tpVal < 0 || tpVal > 20 ||
+                        dsVal < 0 || dsVal > 20 ||
+                        examVal < 0 || examVal > 20) {
+
+                    Toast.makeText(CalculMoyenne.this, "Les notes doivent être entre 0 et 20", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 
                 // Score of one subject
                 double scoreMatiere = (tpVal * 0.20) + (dsVal * 0.10) + (examVal * 0.70);
