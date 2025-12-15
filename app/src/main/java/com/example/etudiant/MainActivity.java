@@ -39,5 +39,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, RechercheActivity.class);
             startActivity(intent);
         });
+
+        // Bouton Admin Login
+        Button btnAdmin = findViewById(R.id.btnAdmin);
+        btnAdmin.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AdminLoginActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

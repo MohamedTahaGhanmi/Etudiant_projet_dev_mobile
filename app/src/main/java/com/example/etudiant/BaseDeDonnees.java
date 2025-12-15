@@ -6,6 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.ContentValues;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // Classe pour gérer la base de données SQLite
 public class BaseDeDonnees extends SQLiteOpenHelper {
 
@@ -129,6 +132,28 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
         // retourne true si au moins une ligne a été supprimée
         return resultat != -1;
     }
+
+    public List<Eleve> getAllStudents() {
+        List<Eleve> students = new ArrayList<>();
+        SQLiteDatabase dbRead = this.getReadableDatabase();
+        Cursor c = dbRead.rawQuery("SELECT * FROM " + TABLE_ELEVES, null);
+
+        if (c.moveToFirst()) {
+            do {
+                String cin = c.getString(c.getColumnIndexOrThrow("cin"));
+                String nom = c.getString(c.getColumnIndexOrThrow("nom"));
+                String prenom = c.getString(c.getColumnIndexOrThrow("prenom"));
+                String sexe = c.getString(c.getColumnIndexOrThrow("sexe"));
+                String classe = c.getString(c.getColumnIndexOrThrow("classe"));
+                double moyenne = c.getDouble(c.getColumnIndexOrThrow("moyenne"));
+
+                students.add(new Eleve(cin, nom, prenom, sexe, classe, moyenne));
+            } while (c.moveToNext());
+        }
+        c.close();
+        return students;
+    }
+
 
 
 }

@@ -47,6 +47,15 @@
             android:name=".CalculMoyenne"
             android:exported="false" />
 
+        <!-- admin login activity -->
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="false" />
+
+        <!-- list student activity -->
+        <activity
+            android:name=".ListStudentActivity"
+            android:exported="false" />
 
     </application>
 
