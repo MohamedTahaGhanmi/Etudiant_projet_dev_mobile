@@ -42,6 +42,11 @@
             android:name=".ModifierEleveActivity"
             android:exported="false" />
 
+        <!-- Calcul Moyenne -->
+        <activity
+            android:name=".CalculMoyenne"
+            android:exported="false" />
+
 
     </application>
 

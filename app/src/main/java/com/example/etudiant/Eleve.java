@@ -46,4 +46,9 @@ public class Eleve {
     public Double getMoyenne() {
         return moyenne;
     }
+
+    public void setMoyenne(double moyenne) {
+        this.moyenne = moyenne;
+    }
+
 }

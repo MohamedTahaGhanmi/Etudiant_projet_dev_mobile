@@ -90,7 +90,12 @@ public class StudentDetailsActivity extends AppCompatActivity {
         });
 
 
-
+        Button btncalculMoyenne = findViewById(R.id.boutonCalculMoyenne);
+        btncalculMoyenne.setOnClickListener(v -> {
+            Intent intent = new Intent(StudentDetailsActivity.this, CalculMoyenne.class);
+            intent.putExtra("cin", extras.getString("cin"));
+            startActivity(intent);
+        });
 
     }
 }
