@@ -74,14 +74,8 @@ public class AjoutEleveActivity extends AppCompatActivity {
             return;
         }
 
-        // Conversion de la moyenne en nombre et vérification
-        float moyenne;
-        try {
-            moyenne = Float.parseFloat(saisieMoyenne.getText().toString());
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "La moyenne doit être un nombre valide", Toast.LENGTH_SHORT).show();
-            return;
-        }
+
+        float moyenne = Float.parseFloat(saisieMoyenne.getText().toString());
 
         // Vérification que la moyenne est entre 0 et 20
         if (moyenne < 0 || moyenne > 20) {
