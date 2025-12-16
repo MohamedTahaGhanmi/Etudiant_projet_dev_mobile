@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <!-- Scrollable student list -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,7 +20,7 @@
 
     </ScrollView>
 
-    <!-- Retour button at the bottom -->
+
     <Button
         android:id="@+id/boutonRetour"
         android:text="Retour"

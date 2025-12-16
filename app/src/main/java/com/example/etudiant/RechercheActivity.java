@@ -41,7 +41,7 @@ public class RechercheActivity extends AppCompatActivity {
                 // Récupération du CIN tapé par l'utilisateur
                 String cin = rechercheCIN.getText().toString().trim();
 
-                // Vérification : si le champ est vide → message d'erreur
+                // Vérification : si le champ est vide -> message d'erreur
                 if (cin.isEmpty()) {
                     Toast.makeText(RechercheActivity.this,
                             "Veuillez entrer un CIN",

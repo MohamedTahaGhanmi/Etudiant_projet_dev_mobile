@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ListStudentActivity extends AppCompatActivity {
 
-    LinearLayout linearLayout;
+    LinearLayout studentLinearLayout;
     BaseDeDonnees db;
 
     @Override
@@ -20,7 +20,7 @@ public class ListStudentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_student);
 
-        linearLayout = findViewById(R.id.linearLayoutStudents);
+        studentLinearLayout = findViewById(R.id.linearLayoutStudents);
         db = new BaseDeDonnees(this);
 
         showStudents();
@@ -30,7 +30,7 @@ public class ListStudentActivity extends AppCompatActivity {
     }
 
     private void showStudents() {
-        linearLayout.removeAllViews(); // clear existing views
+        studentLinearLayout.removeAllViews();
         List<Eleve> students = db.getAllStudents();
 
         for (Eleve e : students) {
@@ -48,7 +48,7 @@ public class ListStudentActivity extends AppCompatActivity {
                 boolean deleted = db.supprimerEleve(e.getCin());
                 if (deleted) {
                     Toast.makeText(this, "Étudiant supprimé", Toast.LENGTH_SHORT).show();
-                    showStudents(); // refresh the list
+                    showStudents(); // refresh
                 } else {
                     Toast.makeText(this, "Erreur de suppression", Toast.LENGTH_SHORT).show();
                 }
@@ -57,7 +57,7 @@ public class ListStudentActivity extends AppCompatActivity {
             row.addView(tv);
             row.addView(btnDelete);
 
-            linearLayout.addView(row);
+            studentLinearLayout.addView(row);
         }
     }
 }

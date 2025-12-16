@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminLoginActivity extends AppCompatActivity {
 
-    private static final String ADMIN_PASSWORD = "1234"; // set your admin password here
+    private static final String ADMIN_PASSWORD = "1234";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +22,10 @@ public class AdminLoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(v -> {
             String pw = etPassword.getText().toString().trim();
             if (pw.equals(ADMIN_PASSWORD)) {
-                // password correct → go to list
+
                 Intent intent = new Intent(AdminLoginActivity.this, ListStudentActivity.class);
                 startActivity(intent);
-                //finish();
+
             } else {
                 Toast.makeText(this, "Mot de passe incorrect", Toast.LENGTH_SHORT).show();
             }
