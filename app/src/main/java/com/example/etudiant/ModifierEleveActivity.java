@@ -51,7 +51,7 @@ public class ModifierEleveActivity extends AppCompatActivity {
             cin = extras.getString("cin");
             etNom.setText(extras.getString("nom"));
             etPrenom.setText(extras.getString("prenom"));
-            etMoyenne.setText(String.valueOf(extras.getDouble("moyenne")));
+            etMoyenne.setText(String.valueOf(extras.getFloat("moyenne")));
 
             if (extras.getString("sexe").equals("Homme"))
                 rbHomme.setChecked(true);
@@ -69,7 +69,7 @@ public class ModifierEleveActivity extends AppCompatActivity {
             String prenom = etPrenom.getText().toString();
             String sexe = rbHomme.isChecked() ? "Homme" : "Femme";
             String classe = spClasse.getSelectedItem().toString();
-            double moyenne = Double.parseDouble(etMoyenne.getText().toString());
+            float moyenne = Float.parseFloat(etMoyenne.getText().toString());
 
             Eleve e = new Eleve(cin, nom, prenom, sexe, classe, moyenne);
 

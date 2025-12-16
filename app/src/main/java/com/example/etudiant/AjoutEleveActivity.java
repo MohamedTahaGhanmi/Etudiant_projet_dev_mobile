@@ -75,7 +75,7 @@ public class AjoutEleveActivity extends AppCompatActivity {
         }
 
         // Conversion de la moyenne en nombre et vérification
-        double moyenne;
+        float moyenne;
         try {
             moyenne = Float.parseFloat(saisieMoyenne.getText().toString());
         } catch (NumberFormatException e) {

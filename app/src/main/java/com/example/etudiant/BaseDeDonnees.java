@@ -84,7 +84,7 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
             String prenom = c.getString(2);
             String sexe = c.getString(3);
             String classe = c.getString(4);
-            Double moyenne = c.getDouble(5);
+            Float moyenne = c.getFloat(5);
 
             c.close();
             return new Eleve(_cin, nom, prenom, sexe, classe, moyenne);
@@ -145,7 +145,7 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
                 String prenom = c.getString(c.getColumnIndexOrThrow("prenom"));
                 String sexe = c.getString(c.getColumnIndexOrThrow("sexe"));
                 String classe = c.getString(c.getColumnIndexOrThrow("classe"));
-                double moyenne = c.getDouble(c.getColumnIndexOrThrow("moyenne"));
+                float moyenne = c.getFloat(c.getColumnIndexOrThrow("moyenne"));
 
                 students.add(new Eleve(cin, nom, prenom, sexe, classe, moyenne));
             } while (c.moveToNext());
@@ -153,7 +153,5 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
         c.close();
         return students;
     }
-
-
 
 }

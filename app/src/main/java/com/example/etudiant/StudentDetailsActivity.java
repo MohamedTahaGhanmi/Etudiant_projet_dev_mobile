@@ -49,7 +49,7 @@ public class StudentDetailsActivity extends AppCompatActivity {
             tvPrenom.setText("Prénom: " + extras.getString("prenom"));
             tvSexe.setText("Sexe: " + extras.getString("sexe"));
             tvClasse.setText("Classe: " + extras.getString("classe"));
-            tvMoyenne.setText("Moyenne: " + extras.getDouble("moyenne"));
+            tvMoyenne.setText("Moyenne: " + extras.getFloat("moyenne"));
         }
 
         Button btnModifier = findViewById(R.id.boutonModifier);
@@ -62,7 +62,7 @@ public class StudentDetailsActivity extends AppCompatActivity {
             intent.putExtra("prenom", extras.getString("prenom"));
             intent.putExtra("sexe", extras.getString("sexe"));
             intent.putExtra("classe", extras.getString("classe"));
-            intent.putExtra("moyenne", extras.getDouble("moyenne"));
+            intent.putExtra("moyenne", extras.getFloat("moyenne"));
 
             startActivity(intent);
         });

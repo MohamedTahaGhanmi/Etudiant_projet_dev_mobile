@@ -9,10 +9,10 @@ public class Eleve {
     private String prenom;    // Prénom de l'élève
     private String sexe;      // Sexe de l'élève ("Homme" ou "Femme")
     private String classe;    // Classe de l'élève (ex : "GLSI 1")
-    private Double moyenne;   // Moyenne de l'élève
+    private Float moyenne;    // Moyenne de l'élève
 
     // Constructeur pour créer un objet Eleve avec toutes ses informations
-    public Eleve(String cin, String nom, String prenom, String sexe, String classe, Double moyenne) {
+    public Eleve(String cin, String nom, String prenom, String sexe, String classe, Float moyenne) {
         this.cin = cin;
         this.nom = nom;
         this.prenom = prenom;
@@ -43,11 +43,11 @@ public class Eleve {
         return classe;
     }
 
-    public Double getMoyenne() {
+    public Float getMoyenne() {
         return moyenne;
     }
 
-    public void setMoyenne(double moyenne) {
+    public void setMoyenne(float moyenne) {
         this.moyenne = moyenne;
     }
 
