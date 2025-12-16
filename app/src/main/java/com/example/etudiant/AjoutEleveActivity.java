@@ -89,14 +89,14 @@ public class AjoutEleveActivity extends AppCompatActivity {
             return;
         }
 
-        // Vérification que les champs obligatoires ne sont pas vides
+        // Vérification que les champs ne sont pas vides
         if (cin.isEmpty() || nom.isEmpty() || prenom.isEmpty()) {
-            Toast.makeText(this, "Veuillez remplir les champs obligatoires", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Veuillez remplir les champs ", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // **Vérification que le CIN contient exactement 8 chiffres**
-        if (cin.length() != 8 || !cin.matches("\\d{8}")) {
+        // Vérification que le CIN contient exactement 8 chiffres
+        if (cin.length() != 8) {
             Toast.makeText(this, "Le CIN doit contenir exactement 8 chiffres", Toast.LENGTH_SHORT).show();
             return;
         }
